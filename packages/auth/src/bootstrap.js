@@ -4,14 +4,16 @@ import { createMemoryHistory, createBrowserHistory } from "history";
 import App from "./App";
 
 // Mount function to start up the app
-const mount = (el, { onNavigate, defaultHistory }) => {
-  const history = defaultHistory || createMemoryHistory();
+const mount = (el, { onSignIn, onNavigate, defaultHistory, initialPath}) => {
+  const history = defaultHistory || createMemoryHistory({
+    initialEntries: [initialPath],
+  });
 
   if (onNavigate) {
     history.listen(onNavigate);
   }
 
-  ReactDOM.render(<App history={history} />, el);
+  ReactDOM.render(<App onSignIn={onSignIn} history={history} />, el);
 
   return {
     onParentNavigate({ pathname: nextPathname }) {
@@ -34,5 +36,5 @@ if (process.env.NODE_ENV === "development") {
   }
 }
 // We are running through container
-// and we shouldd export the mount function
+// and we should export the mount function
 export { mount };
