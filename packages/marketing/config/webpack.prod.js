@@ -5,6 +5,7 @@ const commonConfig = require("./webpack.common");
 
 const prodConfig = {
   mode: "production",
+  devtool: "source-map",
   output: {
     filename: "[name].[contenthash].js",
     publicPath: "/marketing/latest/",
@@ -16,6 +17,7 @@ const prodConfig = {
       exposes: {
         "./MarketingApp": "./src/bootstrap",
       },
+      shared: packageJson.dependencies,
     }),
   ],
 };
