@@ -1,23 +1,20 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import MaterialLink from '@material-ui/core/Link';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import {Paper, TextField} from "@material-ui/core";
+import Box from "@material-ui/core/Box";
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <MaterialLink component={Link} to="/" color="inherit">
+      <Link to="/" color="inherit">
         Your Website
-      </MaterialLink>{' '}
+      </Link>
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -61,88 +58,83 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-export default function Album() {
+export default function Home() {
   const classes = useStyles();
 
   return (
     <React.Fragment>
       <main>
-        {/* Hero unit */}
-        <div className={classes.heroContent}>
-          <Container maxWidth="sm">
-            <Typography
-              component="h1"
-              variant="h2"
-              align="center"
-              color="textPrimary"
-              gutterBottom
-            >
-              Home Page
+        <Container maxWidth="lg">
+          <Box my={4}>
+            <Typography variant="h2" gutterBottom>
+              Understanding Micro frontends
             </Typography>
-            <Typography
-              variant="h5"
-              align="center"
-              color="textSecondary"
-              paragraph
-            >
-              Something short and leading about the collection below—its
-              contents, the creator, etc. Make it short and sweet, but not too
-              short so folks don&apos;t simply skip over it entirely.
+            <Typography variant="subtitle1" gutterBottom>
+              Micro frontend architecture is a design approach in which a frontend app is decomposed into individual,
+              semi-independent "micro" apps working loosely together.
             </Typography>
-            <div className={classes.heroButtons}>
-              <Grid container spacing={2} justifyContent="center">
-                <Grid item>
-                  <Link to="/pricing">
-                    <Button variant="contained" color="primary">
-                      Pricing
-                    </Button>
-                  </Link>
-                </Grid>
-                <Grid item>
-                  <Link to="/pricing">
-                    <Button variant="outlined" color="primary">
-                      Pricing
-                    </Button>
-                  </Link>
+
+            <img src="https://source.unsplash.com/featured/?technology,programming" alt="Technology"
+                 style={{marginTop: 16, width: '100%', height: 'auto'}}/>
+
+            <Paper elevation={3} style={{padding: 16, marginTop: 8, marginBottom: 8}}>
+              <Typography variant="h4" gutterBottom>
+                Pros of Micro frontends
+              </Typography>
+              <Grid container spacing={3}>
+                <Grid item xs={12} md={6}>
+                  <Typography variant="body2">
+                    Micro frontends allow for better scalability, smaller, more cohesive codebases, and the possibility
+                    to
+                    use multiple frameworks. They enable autonomous teams to develop, deploy, and scale their services
+                    independently.
+                  </Typography>
                 </Grid>
               </Grid>
-            </div>
-          </Container>
-        </div>
-        <Container className={classes.cardGrid} maxWidth="md">
-          {/* End hero unit */}
-          <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
-                    title="Image title"
-                  />
-                  <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Heading
-                    </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe
-                      the content.
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      View
-                    </Button>
-                    <Button size="small" color="primary">
-                      Edit
-                    </Button>
-                  </CardActions>
-                </Card>
+            </Paper>
+
+            <Paper elevation={3} style={{padding: 16, marginTop: 8, marginBottom: 8}}>
+              <Typography variant="h4" gutterBottom>
+                Cons of Micro frontends
+              </Typography>
+              <Grid container spacing={3}>
+                <Grid item xs={12} md={6}>
+                  <Typography variant="body2">
+                    However, this approach can lead to challenges with maintaining a consistent UI/UX, increased
+                    complexity
+                    of the overall system, and potential for duplicated dependencies across micro apps.
+                  </Typography>
+                </Grid>
               </Grid>
-            ))}
-          </Grid>
+            </Paper>
+            <Link to="/pricing">
+              <Button variant="contained" color="secondary" fullWidth={true} size="large" style={{marginTop: 20}}
+                      disableElevation>
+                Course
+              </Button>
+            </Link>
+          </Box>
+          <Paper elevation={3} style={{padding: 16, margin: '16px auto'}}>
+            <Typography variant="h4" component="h1" gutterBottom>
+              Stay Updated
+            </Typography>
+            <Typography variant="subtitle1" component="h2" gutterBottom>
+              Subscribe to our newsletter
+            </Typography>
+            <Grid container spacing={2} alignItems="center">
+              <Grid item xs={12} sm={5}>
+                <TextField fullWidth id="name-input" label="Your Name" variant="outlined"/>
+              </Grid>
+              <Grid item xs={12} sm={5}>
+                <TextField fullWidth id="email-input" label="Your Email" variant="outlined"/>
+              </Grid>
+              <Grid item xs={12} sm={2}>
+                <Button fullWidth variant="contained" color="primary" disableElevation>
+                  Subscribe
+                </Button>
+              </Grid>
+            </Grid>
+          </Paper>
         </Container>
       </main>
       {/* Footer */}
@@ -158,7 +150,7 @@ export default function Album() {
         >
           Something here to give the footer a purpose!
         </Typography>
-        <Copyright />
+        <Copyright/>
       </footer>
       {/* End footer */}
     </React.Fragment>
