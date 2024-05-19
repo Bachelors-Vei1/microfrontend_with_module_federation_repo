@@ -7,10 +7,9 @@ import CardHeader from '@material-ui/core/CardHeader';
 import Grid from '@material-ui/core/Grid';
 import StarIcon from '@material-ui/icons/StarBorder';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import { Link as RouterLink } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 function Copyright() {
   return (
@@ -38,9 +37,6 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbarTitle: {
     flexGrow: 1,
-  },
-  link: {
-    margin: theme.spacing(1, 1.5),
   },
   heroContent: {
     padding: theme.spacing(8, 0, 6),
