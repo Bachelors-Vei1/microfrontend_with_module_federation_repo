@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   toolbar: {
-    flexWrap: 'wrap',
+    flexWrap: 'flex-wrap',
   },
   toolbarTitle: {
     flexGrow: 1,
@@ -53,6 +53,10 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'baseline',
     marginBottom: theme.spacing(2),
   },
+  footer: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(6),
+  },
 }));
 
 const tiers = [
@@ -60,10 +64,7 @@ const tiers = [
     title: 'Free',
     price: '0',
     description: [
-      '10 users included',
-      '2 GB of storage',
-      'Help center access',
-      'Email support',
+      'Limited availability',
     ],
     buttonText: 'Sign up for free',
     buttonVariant: 'outlined',
@@ -73,25 +74,10 @@ const tiers = [
     subheader: 'Most popular',
     price: '15',
     description: [
-      '20 users included',
-      '10 GB of storage',
-      'Help center access',
-      'Priority email support',
+      'Lifetime availability',
     ],
     buttonText: 'Get started',
     buttonVariant: 'contained',
-  },
-  {
-    title: 'Enterprise',
-    price: '30',
-    description: [
-      '50 users included',
-      '30 GB of storage',
-      'Help center access',
-      'Phone & email support',
-    ],
-    buttonText: 'Contact us',
-    buttonVariant: 'outlined',
   },
 ];
 export default function Pricing() {
@@ -116,29 +102,25 @@ export default function Pricing() {
           color="textSecondary"
           component="p"
         >
-          Quickly build an effective pricing table for your potential customers
-          with this layout. It&apos;s built with default Material-UI components
-          with little customization.
+          Become pro in IT. Join RTU.
         </Typography>
       </Container>
       {/* End hero unit */}
       <Container maxWidth="md" component="main">
-        <Grid container spacing={5} alignItems="flex-end">
+        <Grid container spacing={10} alignItems="center" justifyContent="center">
           {tiers.map((tier) => (
             // Enterprise card is full width at sm breakpoint
             <Grid
               item
               key={tier.title}
               xs={12}
-              sm={tier.title === 'Enterprise' ? 12 : 6}
+              sm={tier.title ===  12 }
               md={4}
             >
               <Card>
                 <CardHeader
                   title={tier.title}
-                  subheader={tier.subheader}
                   titleTypographyProps={{align: 'center'}}
-                  subheaderTypographyProps={{align: 'center'}}
                   action={tier.title === 'Pro' ? <StarIcon/> : null}
                   className={classes.cardHeader}
                 />
@@ -146,9 +128,6 @@ export default function Pricing() {
                   <div className={classes.cardPricing}>
                     <Typography component="h2" variant="h3" color="textPrimary">
                       ${tier.price}
-                    </Typography>
-                    <Typography variant="h6" color="textSecondary">
-                      /mo
                     </Typography>
                   </div>
                   <ul>
