@@ -4,13 +4,19 @@ import {
   StylesProvider,
   createGenerateClassName,
 } from "@material-ui/core/styles";
-import {createBrowserHistory} from "history"
+import {createBrowserHistory} from "history";
 
 import Header from "./components/Header";
 
-const MarketingLazy = lazy(() => import("./components/MarketingApp"));
-const AuthLazy = lazy(() => import("./components/AuthApp"));
-const DashboardLazy = lazy(() => import("./components/DashboardApp"));
+const MarketingLazy = lazy(() => import("./components/MarketingApp").catch(() => {
+  return { default: () => <>Marketing service is unavailable</> };
+}));
+const AuthLazy = lazy(() => import("./components/AuthApp").catch(() => {
+  return { default: () => <>Authentication service is unavailable</> };
+}));
+const DashboardLazy = lazy(() => import("./components/DashboardApp").catch(() => {
+  return { default: () => <>About me service is unavailable</> };
+}));
 
 const generateClassName = createGenerateClassName({
   productionPrefix: "co",
