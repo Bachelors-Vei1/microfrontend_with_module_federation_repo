@@ -145,7 +145,7 @@ export default function Home() {
           color="textSecondary"
           component="p"
         >
-          Something here to give the footer a purpose!
+          Nikita Hvoina
         </Typography>
         <Copyright/>
       </footer>
