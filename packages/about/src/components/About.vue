@@ -6,6 +6,7 @@
     <h1>{{ name }}</h1>
     <p class="title">{{ jobTitle }}</p>
     <p>{{ description }}</p>
+    <p>{{ subDescription }}</p>
     <div class="social-links">
       <a href="https://lv.linkedin.com/in/nikita-hvoina-995959212">LinkedIn</a>
       <a href="https://github.com/Vei1x">GitHub</a>
@@ -20,7 +21,8 @@ export default {
     return {
       name: 'Nikita Hvoina',
       jobTitle: ' Backend .Net Developer',
-      description: 'This is my demo for my bachelor\'s thesis about MicroFrontend architecture.\nIt was pain.'
+      description: 'This is my demo for my bachelor\'s thesis about MicroFrontend architecture.',
+      subDescription: 'It was pain.',
     }
   },
   methods: {
