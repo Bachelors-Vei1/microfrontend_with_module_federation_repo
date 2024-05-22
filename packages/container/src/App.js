@@ -18,9 +18,9 @@ const AboutLazy = lazy(() => import("./components/AboutApp").catch(() => {
   return { default: () => <>About me service is unavailable</> };
 }));
 
-// const generateClassName = createGenerateClassName({
-//   productionPrefix: "co",
-// });
+const generateClassName = createGenerateClassName({
+  productionPrefix: "co",
+});
 
 const history = createBrowserHistory();
 
@@ -35,7 +35,7 @@ export default () => {
 
   return (
     <Router history={history}>
-      {/*<StylesProvider generateClassName={generateClassName}>*/}
+      <StylesProvider generateClassName={generateClassName}>
         <div>
           <Header
             onSignOut={() => setIsSignedIn(false)}
@@ -54,7 +54,7 @@ export default () => {
             </Switch>
           </Suspense>
         </div>
-      {/*</StylesProvider>*/}
+      </StylesProvider>
     </Router>
   );
 };

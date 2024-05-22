@@ -30,10 +30,6 @@ const useStyles = makeStyles((theme) => ({
     a: {
       textDecoration: 'none',
     },
-    h2: {
-      color: "green",
-      paddingTop: theme.spacing(8),
-    },
   },
   paper: {
     marginTop: theme.spacing(8),

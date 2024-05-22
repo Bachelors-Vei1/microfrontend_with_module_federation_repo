@@ -26,10 +26,6 @@ const useStyles = makeStyles((theme) => ({
     a: {
       textDecoration: 'none',
     },
-    h2:{
-      color: "red !important",
-      paddingBottom: theme.spacing(8),
-    },
   },
   icon: {
     marginRight: theme.spacing(2),
