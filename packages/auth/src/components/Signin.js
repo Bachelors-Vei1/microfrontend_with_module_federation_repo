@@ -30,6 +30,10 @@ const useStyles = makeStyles((theme) => ({
     a: {
       textDecoration: 'none',
     },
+    h2: {
+      color: "green",
+      paddingTop: theme.spacing(8),
+    },
   },
   paper: {
     marginTop: theme.spacing(8),
@@ -59,7 +63,7 @@ export default function SignIn({ onSignIn }) {
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
+        <Typography component="h2" variant="h5">
           Sign in
         </Typography>
         <form

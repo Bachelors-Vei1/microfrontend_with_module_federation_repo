@@ -12,10 +12,10 @@ const prodConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "dashboard",
+      name: "about",
       filename: "remoteEntry.js",
       exposes: {
-        "./DashboardApp": "./src/bootstrap",
+        "./AboutApp": "./src/bootstrap",
       },
       shared: packageJson.dependencies,
     }),

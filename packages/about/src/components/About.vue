@@ -19,8 +19,8 @@ export default {
   data() {
     return {
       name: 'Nikita Hvoina',
-      jobTitle: 'Dotnet Developer',
-      description: 'This is my demo for my bachelor\'s thesis. It was pain. '
+      jobTitle: ' Backend .Net Developer',
+      description: 'This is my demo for my bachelor\'s thesis about MicroFrontend architecture. It was pain... '
     }
   },
   methods: {

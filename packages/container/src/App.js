@@ -14,13 +14,13 @@ const MarketingLazy = lazy(() => import("./components/MarketingApp").catch(() =>
 const AuthLazy = lazy(() => import("./components/AuthApp").catch(() => {
   return { default: () => <>Authentication service is unavailable</> };
 }));
-const DashboardLazy = lazy(() => import("./components/DashboardApp").catch(() => {
+const AboutLazy = lazy(() => import("./components/AboutApp").catch(() => {
   return { default: () => <>About me service is unavailable</> };
 }));
 
-const generateClassName = createGenerateClassName({
-  productionPrefix: "co",
-});
+// const generateClassName = createGenerateClassName({
+//   productionPrefix: "co",
+// });
 
 const history = createBrowserHistory();
 
@@ -29,13 +29,13 @@ export default () => {
 
   useEffect(() => {
     if (isSignedIn) {
-      history.push("/dashboard");
+      history.push("/about");
     }
   }, [isSignedIn]);
 
   return (
     <Router history={history}>
-      <StylesProvider generateClassName={generateClassName}>
+      {/*<StylesProvider generateClassName={generateClassName}>*/}
         <div>
           <Header
             onSignOut={() => setIsSignedIn(false)}
@@ -46,15 +46,15 @@ export default () => {
               <Route path="/auth">
                 <AuthLazy onSignIn={() => setIsSignedIn(true)}/>
               </Route>
-              <Route path="/dashboard">
+              <Route path="/about">
                 {!isSignedIn && <Redirect to="/" />}
-                <DashboardLazy />
+                <AboutLazy />
               </Route>
               <Route path="/" component={MarketingLazy}/>
             </Switch>
           </Suspense>
         </div>
-      </StylesProvider>
+      {/*</StylesProvider>*/}
     </Router>
   );
 };
