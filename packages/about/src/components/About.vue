@@ -20,7 +20,7 @@ export default {
     return {
       name: 'Nikita Hvoina',
       jobTitle: ' Backend .Net Developer',
-      description: 'This is my demo for my bachelor\'s thesis about MicroFrontend architecture. It was pain... '
+      description: 'This is my demo for my bachelor\'s thesis about MicroFrontend architecture. It was pain.'
     }
   },
   methods: {
