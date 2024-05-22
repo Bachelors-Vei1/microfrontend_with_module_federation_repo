@@ -67,12 +67,18 @@ h1 {
 .title {
   color: #555;
   font-style: italic;
+  margin: 20px auto;
 }
 
 p {
   width: 80%;
   max-width: 600px;
-  margin: 20px auto;
+  margin: 0;
+}
+
+.social-links {
+  margin: 50px auto;
+
 }
 
 .social-links a {
