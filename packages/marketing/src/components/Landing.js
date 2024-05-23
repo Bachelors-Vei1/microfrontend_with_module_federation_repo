@@ -67,11 +67,11 @@ export default function Home() {
         <Container maxWidth="lg">
           <Box my={4}>
             <Typography variant="h2" gutterBottom>
-              Understanding Micro frontends
+              Understanding micro-frontends architecture
             </Typography>
             <Typography variant="subtitle1" gutterBottom>
-              Micro frontend architecture is a design approach in which a frontend app is decomposed into individual,
-              semi-independent "micro" apps working loosely together.
+              Micro-frontends architecture  is a design approach in which a frontend app is decomposed into individual,
+              semi-independent "micro-frontends" apps working loosely together.
             </Typography>
 
             <img src="https://source.unsplash.com/featured/?technology,programming" alt="Technology"
@@ -79,12 +79,12 @@ export default function Home() {
 
             <Paper elevation={3} style={{padding: 16, marginTop: 8, marginBottom: 8}}>
               <Typography variant="h4" gutterBottom>
-                Pros of Micro frontends
+                Pros of micro-frontends architecture
               </Typography>
               <Grid container spacing={3}>
                 <Grid item xs={12} md={6}>
                   <Typography variant="body2">
-                    Micro frontends allow for better scalability, smaller, more cohesive codebases, and the possibility
+                    Micro-frontends architecture allow for better scalability, smaller, more cohesive codebases, and the possibility
                     to
                     use multiple frameworks. They enable autonomous teams to develop, deploy, and scale their services
                     independently.
@@ -95,14 +95,14 @@ export default function Home() {
 
             <Paper elevation={3} style={{padding: 16, marginTop: 8, marginBottom: 8}}>
               <Typography variant="h4" gutterBottom>
-                Cons of Micro frontends
+                Cons of micro-frontends architecture
               </Typography>
               <Grid container spacing={3}>
                 <Grid item xs={12} md={6}>
                   <Typography variant="body2">
                     However, this approach can lead to challenges with maintaining a consistent UI/UX, increased
                     complexity
-                    of the overall system, and potential for duplicated dependencies across micro apps.
+                    of the overall system, and potential for duplicated dependencies across micro-frontends apps.
                   </Typography>
                 </Grid>
               </Grid>
