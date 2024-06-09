@@ -1,5 +1,5 @@
 import React, {lazy, Suspense, useState, useEffect} from "react";
-import {Route, Switch, Redirect, BrowserRouter} from "react-router-dom";
+import { Router, Route, Switch, Redirect} from "react-router-dom";
 import {
   StylesProvider,
   createGenerateClassName,
@@ -34,7 +34,7 @@ export default () => {
   }, [isSignedIn]);
 
   return (
-    <BrowserRouter>
+    <Router history={history}>
       <StylesProvider generateClassName={generateClassName}>
         <div>
           <Header
@@ -48,7 +48,6 @@ export default () => {
               </Route>
               <Route path="/about">
                 {!isSignedIn && <Redirect to="/" />}
-
                 <AboutLazy />
               </Route>
               <Route path="/" component={MarketingLazy} />
@@ -56,6 +55,6 @@ export default () => {
           </Suspense>
         </div>
       </StylesProvider>
-    </BrowserRouter>
+    </Router>
   );
 };
